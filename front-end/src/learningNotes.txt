@@ -1,0 +1,19 @@
+JWT - unique identication / authentication technique
+
+user -> jwt (valid) -> no need to send password, instead send this String JWT token/String
+
+JWT look like?
+
+snfekrfnglm.flkfoinflm42095u209rjvlgnlkfnls.cskvdskf94u
+Header  .   Payload   . Signature
+
+Header = {"alg":"HS256", "type":"JWT"}
+Payload (Actual Data - Claims) = {id:1, email:sandeep.p4856@gmail.com}
+Signature = to prove the authencity
+
+Step1: Login in Success (send valid credentials)
+Step2: Server -> generates a JWT containing the user's information
+Step3: server send the JWT to the Client
+Step4: store the token to local storage, Session storage, cookies
+Step5: whenever users whant's to make private route access, then gonna send this JWT token along with request
+Step6: server is going to use the JWT's Signature to verify that it hasn't been modified.
